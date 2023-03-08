@@ -35,6 +35,6 @@ app.get("/chat", (req, res) => {
 })
 
 
-http.listen(8080, () => {
+http.listen(4004, () => {
     console.log("Servidor está rodando.")
 })

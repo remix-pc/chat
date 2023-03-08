@@ -27,8 +27,9 @@ function enviar(){
 
     var msg = msgField.value
     var username = usernameField.value
-
+    msgField.value = ""
     socket.emit("msg", {msg: msg, username: username})
+
    
 
 }
@@ -46,7 +47,7 @@ function evento(){
         background: '#fff url(/images/trees.png)',
         backdrop: `
           rgba(0,0,123,0.4)
-          url("/images/nyan-cat.gif")
+          url("/img/nyan-cat.gif")
           left top
           no-repeat
         `
