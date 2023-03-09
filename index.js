@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const http = require('http').createServer(app)
-const io = require('socket.io')(http)
+const io = require('socket.io')(https://teste-chat.onrender.com)
 
 io.on("connection", (socket) => {
     socket.on("disconnect", () => {
