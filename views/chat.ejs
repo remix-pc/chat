@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="/css/chat.css">
 </head>
 <body onload="evento()">
-    <h1>Chat do Remixo</h1>
+    <h1>Chat do Remixo (está em beta, calma)</h1>
     <div id="chat">
 
     </div>
-    <input type="text" id="msg" class="form-control" placeholder="Digite sua mensagem"><br>
-    <input type="text" id="username" class="form-control" disabled><br>
+
+    <textarea id="msg" cols="100" rows="1" maxlength="100" class="form-control" placeholder="Digite sua mensagem"></textarea><br>
+    <input type="text" id="username" class="form-control" disabled>
     <button onclick="enviar()" class="btn btn-primary btn-lg btn-block">Enviar</button>
 
     <footer>

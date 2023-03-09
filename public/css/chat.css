@@ -1,12 +1,26 @@
 #chat{
     max-height: 500px;
     min-height: 500px;
+    display: block;
     background-color: aliceblue;
     overflow-y: scroll;
     margin-bottom: 10px;
 }
 
+p{
+    word-wrap: break-word;
+    margin-left: 10px;
+}
 
+div{
+    margin-top: 2em;
+    display: flex;
+}
+
+img{
+    width: 30px;
+    height: 30px;
+}
 
 button{
     width: 100%;
@@ -17,3 +31,4 @@ footer{
     position: absolute;
     width: 100%;
 }
+

@@ -8,19 +8,39 @@
     <title>CHAT.Io</title>
 </head>
 <body>
-    <form action="/chat">
-        <input type="text"  id="user"><br>
-        <button onclick="entrar()">Entrar</button>
-    </form>
+    <h1>CHAT DO REMIXO</h1>
+    <h3>Por favor, insira seu nome logo abaixo e venha conversar conosco!</h3>
+    <div>
+        
+        <form action="/chat">
+            <input type="text"  id="user" placeholder=""><br>
+            <button onclick="entrar()">Entrar</button>
+        </form>
+    </div>
+    
 </body>
     <script>
         function entrar() {
         
+
+            const form = document.querySelector('form')
             var userName = document.getElementById("user")
+            
 
             var user = userName.value
             
-            localStorage.setItem("key", user)
+            if(/^\s*$/.test(user)){
+                alert("Por favor, digite um nome de usuário :c")
+                form.addEventListener('submit', (event) => {
+                    userName.addEventListener("focus", function() {
+                        userName.placeholder = "Aqui aqui aqui"
+                    })
+                    event.preventDefault()
+                })
+            } else{
+                localStorage.setItem("key", user)
+            }
+            
 
         }
     </script>
