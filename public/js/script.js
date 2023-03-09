@@ -1,4 +1,4 @@
-var socket = io("http://localhost:4004");
+var socket = io("http://localhost:4004", { transports: ['websocket'] })
 
 socket.on("disconnect", () => {
 
