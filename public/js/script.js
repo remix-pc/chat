@@ -1,4 +1,4 @@
-var socket = io("https://teste-chat.onrender.com/");
+var socket = io("http://localhost:4004");
 
 socket.on("disconnect", () => {
 
