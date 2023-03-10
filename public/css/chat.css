@@ -13,11 +13,11 @@ p{
 }
 
 div{
-    margin-top: 2em;
+    margin-top: 5px;
     display: flex;
 }
 
-img{
+.perfil{
     width: 30px;
     height: 30px;
 }
