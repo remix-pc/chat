@@ -50,7 +50,8 @@ socket.on("showmsg", (data) => {
         
 
         if(data.username == "Remixo"){
-            img.src = "https://i.pinimg.com/originals/89/5d/79/895d79a1776bfc0de2ceeccc494274d3.png"
+            img.src = "../images/pochita.gif"
+            //"https://i.pinimg.com/originals/89/5d/79/895d79a1776bfc0de2ceeccc494274d3.png"
         }else{
             // let i = Math.random() * 2
             // let y = parseInt(i)
