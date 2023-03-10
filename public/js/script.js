@@ -1,6 +1,6 @@
-var socket = io('http://localhost:4004')
+var socket = io("https://teste-chat.onrender.com", { transports: ['websocket'] })
 
-//("https://teste-chat.onrender.com", { transports: ['websocket'] })
+//('http://localhost:4004')
 
 socket.on("disconnect", () => {
 
