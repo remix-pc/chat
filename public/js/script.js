@@ -29,6 +29,7 @@ socket.on("showmsg", (data) => {
         var p = document.createElement("p")
         var div = document.createElement('div')
         var image = document.createElement("img")
+        image.classList.add("imagemURL")
         const imgRegex = /\.(gif|jpe?g|png)$/i
         var teste = data.msg
         if(imgRegex.test(teste)){

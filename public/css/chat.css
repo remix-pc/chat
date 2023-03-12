@@ -12,6 +12,12 @@ p{
     margin-left: 10px;
 }
 
+
+.imagemURL{
+    max-width: 500px;
+    height: 300px;    
+}
+
 div{
     margin-top: 5px;
     display: flex;
