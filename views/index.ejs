@@ -15,7 +15,10 @@
     <div>
         
         <form action="/chat">
+            <label for="">Digite seu nome logo abaixo</label>
             <input type="text"  id="user" placeholder="" class="form-control"><br>
+            <label for="">Insira sua imagem logo abaixo</label>
+            <input type="file"  class="form-control" id="userImg">
             <button onclick="entrar()">Entrar</button>
         </form>
     </div>
@@ -23,12 +26,36 @@
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
     <script>
+
+        var socket = io("https://teste-chat.onrender.com", { transports: ['websocket'] })
+
         function entrar() {
-        
+            
+            const imageRegex = /^data:image\/(png|jpeg|gif);base64,/i
 
             const form = document.querySelector('form')
             var userName = document.getElementById("user")
+            const userImagem = document.getElementById('userImg')
             
+            const imgFile = userImagem.files[0]
+            const reader = new FileReader()
+            reader.readAsDataURL(imgFile)
+
+            reader.onload = () =>{
+                const imgData = reader.result
+
+                if(imageRegex.test(imgData)){
+                    localStorage.setItem('img', imgData)
+                }else {
+                    alert("INSIRA UMA IMAGEM!")
+                    form.addEventListener('submit', (event) => {
+                    userName.addEventListener("focus", function() {
+                        userName.placeholder = "Aqui aqui aqui"
+                    })
+                    event.preventDefault()
+                })
+                }
+            }
 
             var user = userName.value
             

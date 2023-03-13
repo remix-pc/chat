@@ -16,11 +16,25 @@ socket.on("disconnect", () => {
     
     var usernameField = document.getElementById("username")
     usernameField.value = localStorage.getItem("key")
+    const imageData = localStorage.getItem('img')
 
 
-socket.on("showmsg", (data) => {
+    const byteString = window.atob(imageData.split(',')[1])
+    const buffer = new Uint8Array(byteString.length)
+    for(let i = 0; i < byteString.length; i++) {
+        buffer[i] = byteString.charCodeAt(i)
+    }
+
+
+    const blob = new Blob([buffer], {type: 'image/png'})
+    const imageURL = URL.createObjectURL(blob)
+
+    socket.on("showmsg", (data) => {
 
         
+        
+
+
 
         console.log(data)
         var chat = document.getElementById("chat")
@@ -30,6 +44,7 @@ socket.on("showmsg", (data) => {
         var div = document.createElement('div')
         var image = document.createElement("img")
         image.classList.add("imagemURL")
+        //const imagePerfil = document.createElement('img')
         const imgRegex = /\.(gif|jpe?g|png)$/i
         var teste = data.msg
         if(imgRegex.test(teste)){
@@ -51,12 +66,13 @@ socket.on("showmsg", (data) => {
         
 
         if(data.username == "Remixo"){
-            img.src = "../images/pochita.gif"
+            img.src =  imageURL
             //"https://i.pinimg.com/originals/89/5d/79/895d79a1776bfc0de2ceeccc494274d3.png"
+            p.style.color = 'red'
         }else{
             // let i = Math.random() * 2
             // let y = parseInt(i)
-            img.src = "../images/duck.png"
+            img.src = imageURL
         }
        
         
